@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuario</title>
+    <script type="text/javascript" src="main.js"></script>
+
+    <style>
+        #cadastroRegistros {
+            display: nome;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        body[page=lista] #listaRegistros {
+            display: block;
+        }
+        
+        body[page=cadastro] #cadastroRegistro {
+            display: flex;
+        }
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        table th,
+        table td {
+            font-size: 14px;
+            padding: 10px 15px;
+            border: solid 1px #ccc;
+        }
+        
+        button {
+            border: nome;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #07a;
+            color: #fff;
+            margin: 3px;
+            padding: 10px 15px;
+        }
+        
+        button.cinza {
+            background-color: #ccc;
+            color: #666;
+        }
+        
+        button.vermelho {
+            background-color: #a00;
+        }
+        
+        button:hover {
+            opacity: 0.8;
+        }
+        
+        input {
+            border: solid 1px #ccc;
+            border-radius: 4px;
+            padding: 10px;
+        }
+        
+        .label>div {
+            display: flex;
+        }
+        
+        .label>div>input {
+            flex: 0.1;
+        }
+    </style>
+</head>
+
+<body page='lista'>
+
+    <div id='listaRegistros'>
+        <div style="display: flex;">
+            <input style='flex: 1' placeholder="PESQUISAR" autofocus id="inputPesquisa" />
+        </div>
+
+        <div id="listaRegistros">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Usuario</th>
+                        <th>Senha</th>
+                        <th>Valor</th>
+                        <th>Data De Pagamento</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody id="listaRegistrosBody"></tbody>
+            </table>
+
+            <div>
+                <button onclick="vizualizar('cadastro', true)">Novo Usuario</button>
+            </div>
+
+        </div>
+
+        <div id="cadastroRegistros">
+
+            <div class="label">
+                <div>Nome</div>
+                <div>
+                    <input id="nome" />
+
+                </div>
+            </div>
+
+            <div class="label">
+                <div>Usuario</div>
+                <div>
+                    <input type="tel" />
+                </div>
+            </div>
+
+            <div class="label">
+                <div>Senha</div>
+                <div>
+                    <input type="senha" id="senha" />
+
+                </div>
+            </div>
+
+            <div class="label">
+                <div>Valor</div>
+                <div>
+                    <input />
+
+                </div>
+            </div>
+
+
+            <div class="label">
+                <div>Data De Pagamento</div>
+                <div>
+                    <input />
+
+                </div>
+            </div>
+
+            <div>
+                <button>Salvar</button>
+                <button onclick="vizualizar('lista')" class="cinza" type="'button">Cancelar</button>
+            </div>
+
+        </div>
+
+</body>
+
+</html>
